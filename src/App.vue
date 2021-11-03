@@ -1,19 +1,31 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <router-view></router-view>
+    <!-- <MybolglistVue /> -->
+    <!-- <AddBlog /> -->
+
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <div>
+      <router-link to="/add-blog">add-blog</router-link>
+      <router-link to="/app">App.vue</router-link>
+       <router-link to="/Mybolg">Mybolg</router-link>
+
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import MybolglistVue from "./components/Mybolglist.vue";
+// import AddBlog from "./components/AddBlog.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    // HelloWorld,
+    // MybolglistVue,
+    // AddBlog,
+  },
+};
 </script>
 
 <style>
