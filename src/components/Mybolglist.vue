@@ -1,8 +1,17 @@
 <template>
   <div>
     <div v-for="(p, index) of bolgs" :key="index">
-      <h1>{{ p.title }}</h1>
-      <p>{{ p.content }}</p>
+      <!-- <h1>{{ p.title }}</h1>
+      <p>{{ p.content }}</p> -->
+      <el-card class="box-card">
+  <div slot="header" class="clearfix">
+    <span>{{ p.title }}</span>
+    <el-button style="float: right; padding: 3px 0" type="text">操作按钮</el-button>
+  </div>
+  <div  class="text item">
+    {{ p.content }}
+  </div>
+</el-card>
     </div>
   </div>
 </template>

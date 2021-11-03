@@ -6,10 +6,19 @@
 
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <div>
-      <router-link to="/add-blog">add-blog</router-link>
+      <!-- <el-tabs>
+        <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
+        <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
+        <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
+        <el-tab-pane label="定时任务补偿" name="fourth"
+          >定时任务补偿</el-tab-pane
+        >
+      </el-tabs> -->
+      <router-link to="/add-blog">add-blog </router-link>
       <router-link to="/app">App.vue</router-link>
-       <router-link to="/Mybolg">Mybolg</router-link>
+      <router-link to="/Mybolg">Mybolg</router-link>
 
+      <el-button @click="asd" size="mini" type="primary">主要按钮</el-button>
     </div>
   </div>
 </template>
@@ -20,6 +29,11 @@
 
 export default {
   name: "App",
+  methods: {
+    asd() {
+      console.log("xixixixi");
+    },
+  },
   components: {
     // HelloWorld,
     // MybolglistVue,
