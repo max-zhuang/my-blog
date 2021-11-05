@@ -1,7 +1,7 @@
 import VueRouter from "vue-router";
 import AddBlog from "../components/AddBlog.vue";
 import App from "../App.vue";
-import Mybolglist from "../components/Mybolglist.vue"
+import Mybloglist from "../components/Mybloglist.vue"
 
 export default new VueRouter({
   routes: [
@@ -14,8 +14,8 @@ export default new VueRouter({
       component: App,
     },
     {
-      path:"/Mybolg",
-      component: Mybolglist
+      path:"/blog-list",
+      component: Mybloglist
     }
   ],
 });

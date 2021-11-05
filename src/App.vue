@@ -1,43 +1,52 @@
 <template>
   <div id="app">
-    <router-view></router-view>
-    <!-- <MybolglistVue /> -->
-    <!-- <AddBlog /> -->
+    <router-view :handleAddBlog="handleAddBlog" :blogs="blogs"></router-view>
 
-    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <div>
-      <!-- <el-tabs>
-        <el-tab-pane label="用户管理" name="first">用户管理</el-tab-pane>
-        <el-tab-pane label="配置管理" name="second">配置管理</el-tab-pane>
-        <el-tab-pane label="角色管理" name="third">角色管理</el-tab-pane>
-        <el-tab-pane label="定时任务补偿" name="fourth"
-          >定时任务补偿</el-tab-pane
-        >
-      </el-tabs> -->
       <router-link to="/add-blog">add-blog </router-link>
       <router-link to="/app">App.vue</router-link>
-      <router-link to="/Mybolg">Mybolg</router-link>
-
-      <el-button @click="asd" size="mini" type="primary">主要按钮</el-button>
+      <router-link to="/blog-list">blog-list</router-link>
     </div>
   </div>
 </template>
 
 <script>
-// import MybolglistVue from "./components/Mybolglist.vue";
-// import AddBlog from "./components/AddBlog.vue";
-
 export default {
   name: "App",
-  methods: {
-    asd() {
-      console.log("xixixixi");
-    },
-  },
+
   components: {
     // HelloWorld,
-    // MybolglistVue,
+    // MybloglistVue,
     // AddBlog,
+  },
+  data: function () {
+    return {
+      sharedData: () => {},
+      blogs: [
+        {
+          id:1,
+          title: "cakejuju",
+          content: `我们提供了通用的项目模板，你可以直接使用。对于 Laravel 用户，我们也准备了相应的模板，同样可以直接下载使用。
+
+如果不希望使用我们提供的模板，请继续阅读`,
+        },
+        {
+          id:2,
+          title: "james",
+          content: `勒布朗·詹姆斯（LeBron James），全名勒布朗·雷蒙·詹姆斯（LeBron Raymone James），1984年12月30日出生于美国俄亥俄州阿克伦，美国职业篮球运动员，司职小前锋，绰号“小皇帝”（King James），效力于NBA洛杉矶湖人队。`,
+        },
+        {
+          id:3,
+          title: "kobe",
+          content: `科比·比恩·布莱恩特（Kobe Bean Bryant，1978年8月23日—2020年1月26日），出生于美国宾夕法尼亚州费城，前美国职业篮球运动员，司职得分后卫/小前锋（锋卫摇摆人），绰号“黑曼巴”（Black Mamba）。`,
+        },
+      ],
+    };
+  },
+  methods: {
+    handleAddBlog(blog) {
+      this.blogs.push(blog);
+    },
   },
 };
 </script>
