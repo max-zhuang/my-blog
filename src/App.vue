@@ -19,24 +19,40 @@ export default {
     // MybloglistVue,
     // AddBlog,
   },
-  data: function () {
+  data() {
     return {
       sharedData: () => {},
       blogs: [
         {
-          id:1,
+          id: 1,
           title: "cakejuju",
           content: `我们提供了通用的项目模板，你可以直接使用。对于 Laravel 用户，我们也准备了相应的模板，同样可以直接下载使用。
 
 如果不希望使用我们提供的模板，请继续阅读`,
         },
         {
-          id:2,
+          id: 2,
           title: "james",
           content: `勒布朗·詹姆斯（LeBron James），全名勒布朗·雷蒙·詹姆斯（LeBron Raymone James），1984年12月30日出生于美国俄亥俄州阿克伦，美国职业篮球运动员，司职小前锋，绰号“小皇帝”（King James），效力于NBA洛杉矶湖人队。`,
         },
         {
-          id:3,
+          id: 3,
+          title: "kobe",
+          content: `科比·比恩·布莱恩特（Kobe Bean Bryant，1978年8月23日—2020年1月26日），出生于美国宾夕法尼亚州费城，前美国职业篮球运动员，司职得分后卫/小前锋（锋卫摇摆人），绰号“黑曼巴”（Black Mamba）。`,
+        },        {
+          id: 4,
+          title: "kobe",
+          content: `科比·比恩·布莱恩特（Kobe Bean Bryant，1978年8月23日—2020年1月26日），出生于美国宾夕法尼亚州费城，前美国职业篮球运动员，司职得分后卫/小前锋（锋卫摇摆人），绰号“黑曼巴”（Black Mamba）。`,
+        },        {
+          id: 5,
+          title: "kobe",
+          content: `科比·比恩·布莱恩特（Kobe Bean Bryant，1978年8月23日—2020年1月26日），出生于美国宾夕法尼亚州费城，前美国职业篮球运动员，司职得分后卫/小前锋（锋卫摇摆人），绰号“黑曼巴”（Black Mamba）。`,
+        },        {
+          id: 6,
+          title: "kobe",
+          content: `科比·比恩·布莱恩特（Kobe Bean Bryant，1978年8月23日—2020年1月26日），出生于美国宾夕法尼亚州费城，前美国职业篮球运动员，司职得分后卫/小前锋（锋卫摇摆人），绰号“黑曼巴”（Black Mamba）。`,
+        },        {
+          id: 7,
           title: "kobe",
           content: `科比·比恩·布莱恩特（Kobe Bean Bryant，1978年8月23日—2020年1月26日），出生于美国宾夕法尼亚州费城，前美国职业篮球运动员，司职得分后卫/小前锋（锋卫摇摆人），绰号“黑曼巴”（Black Mamba）。`,
         },
@@ -45,7 +61,20 @@ export default {
   },
   methods: {
     handleAddBlog(blog) {
+      console.log(blog);
+      let maxId = 0;
+      for (let i = 0; i < this.blogs.length; i++) {
+        if (maxId < this.blogs[i].id) {
+          maxId = this.blogs[i].id;
+        }
+      }
+      blog.id = maxId + 1;
       this.blogs.push(blog);
+    },
+  },
+  computed: {
+    addIndex() {
+      return this.blogs.map;
     },
   },
 };

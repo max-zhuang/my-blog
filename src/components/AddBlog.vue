@@ -28,6 +28,7 @@ export default {
   methods: {
     add() {
       this.handleAddBlog({ title: this.title, content: this.content });
+      this.$router.push("/blog-list");
       // this.records.push({ title: this.title, content: this.content });
     },
   },
